@@ -1,7 +1,7 @@
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { StaticImageData } from 'next/future/image'
-import cx from 'clsx'
+import { IoClose } from 'react-icons/io5'
 
 import img1 from 'public/images/gallery/1.jpg'
 import img2 from 'public/images/gallery/2.jpg'
@@ -57,7 +57,13 @@ export default function Modal({ index, show, onClose }: ModalProps) {
               leaveTo='opacity-0 scale-95'
             >
               <Dialog.Panel className='w-full md:w-11/12 transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
-                <div className='p-4 flex'>
+                <div className='p-4 flex justify-center relative'>
+                  <button
+                    onClick={onClose}
+                    className='absolute -right-4 -top-4 transition-colors bg-transparent rounded-md hover:bg-gray-200 p-1'
+                  >
+                    <IoClose size={24} />
+                  </button>
                   <div className='relative w-[calc(100vw-20%)] h-[calc(100vh-300px)] transition-all duration-300'>
                     <ModalItem src={src} />
                   </div>
