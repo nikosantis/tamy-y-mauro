@@ -1,17 +1,20 @@
 import Image from 'next/future/image'
 
-import FlowerTop from 'components/vectors/flower-top'
-import FlowerBottom from 'components/vectors/flower-bottom'
 import Logo from 'components/logo'
 
 import bannerImg from 'public/images/intro.webp'
 import left from 'public/images/utils/9-left.png'
 import right from 'public/images/utils/9-right.png'
 import img7 from 'public/images/utils/7.png'
+import { useHeader } from 'components/header/context'
 
 export default function Intro() {
+  const { startRef } = useHeader()
   return (
-    <section className='w-full h-screen relative z-0 flex justify-center items-center select-none'>
+    <section
+      className='w-full h-screen relative z-0 flex justify-center items-center select-none'
+      ref={startRef}
+    >
       <Image
         src={bannerImg}
         alt='Tamy & Mauro'
@@ -46,10 +49,10 @@ export default function Intro() {
             ¡Nos Casamos!<span className='hidden'> - Tamy & Mauro</span>
           </h1>
           <div className='hidden md:block'>
-            <Logo />
+            <Logo className='text-white' />
           </div>
           <div className='block md:hidden'>
-            <Logo width={200} />
+            <Logo width={200} className='text-white' />
           </div>
         </div>
         <div className='mt-4 mb-8'>

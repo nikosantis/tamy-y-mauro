@@ -1,9 +1,15 @@
 import { BiBookHeart, BiHomeHeart } from 'react-icons/bi'
+import Image from 'next/future/image'
 
 import { story } from 'lib/data'
 import Dot from './dot'
 import Rings from 'components/icons/rings'
 import Couple from 'components/icons/couple'
+
+import img1 from 'public/images/gallery/3.jpg'
+import img2 from 'public/images/gallery/5.jpg'
+import img3 from 'public/images/footer.jpg'
+import img4 from 'public/images/gallery/6.jpg'
 
 export default function MobileStory() {
   return (
@@ -26,7 +32,16 @@ export default function MobileStory() {
 
         <div className='flex-1 pl-8 py-10 flex flex-col'>
           <div className=' flex items-center mb-6'>
-            <div className='h-[200px] w-full bg-lunar-700' />
+            <div className='h-[200px] w-full bg-lunar-700 relative'>
+              <Image
+                src={img1}
+                alt={story[0].title}
+                placeholder='blur'
+                fill
+                sizes='100vw'
+                className='object-cover'
+              />
+            </div>
           </div>
 
           <div className=''>
@@ -61,7 +76,16 @@ export default function MobileStory() {
 
         <div className='flex-1 pl-8 py-10 flex flex-col'>
           <div className=' flex items-center mb-6'>
-            <div className='h-[200px] w-full bg-lunar-700' />
+            <div className='h-[200px] w-full bg-lunar-700 relative'>
+              <Image
+                src={img2}
+                alt={story[1].title}
+                placeholder='blur'
+                fill
+                sizes='100vw'
+                className='object-cover'
+              />
+            </div>
           </div>
 
           <div className=''>
@@ -96,7 +120,16 @@ export default function MobileStory() {
 
         <div className='flex-1 pl-8 py-10 flex flex-col'>
           <div className=' flex items-center mb-6'>
-            <div className='h-[200px] w-full bg-lunar-700' />
+            <div className='h-[200px] w-full bg-lunar-700 relative'>
+              <Image
+                src={img3}
+                alt={story[2].title}
+                placeholder='blur'
+                fill
+                sizes='100vw'
+                className='object-cover'
+              />
+            </div>
           </div>
 
           <div className=''>
@@ -131,7 +164,16 @@ export default function MobileStory() {
 
         <div className='flex-1 pl-8 py-10 flex flex-col'>
           <div className=' flex items-center mb-6'>
-            <div className='h-[200px] w-full bg-lunar-700' />
+            <div className='h-[200px] w-full bg-lunar-700 relative'>
+              <Image
+                src={img4}
+                alt={story[3].title}
+                placeholder='blur'
+                fill
+                sizes='100vw'
+                className='object-cover'
+              />
+            </div>
           </div>
 
           <div className=''>

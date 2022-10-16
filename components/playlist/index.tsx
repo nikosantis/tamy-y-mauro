@@ -43,7 +43,7 @@ export default function Playlist() {
                   <div className='w-[300px] h-[380px]'>
                     <iframe
                       className='rounded-lg border-0'
-                      src='https://open.spotify.com/embed/playlist/77chgKtqdLDxShcnizTusz?utm_source=generator&theme=0'
+                      src='https://open.spotify.com/embed/playlist/7b07qpIqBHz4QoM8MIoTlL?utm_source=generator&theme=0'
                       width='100%'
                       height='380'
                       allowFullScreen

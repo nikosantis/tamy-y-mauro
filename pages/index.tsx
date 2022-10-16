@@ -1,6 +1,7 @@
 import WeddingDate from 'components/date'
 import Footer from 'components/footer'
 import Gallery from 'components/gallery'
+import Gifts from 'components/gifts'
 import Header from 'components/header'
 import Intro from 'components/intro'
 import OurStory from 'components/our-story'
@@ -15,6 +16,7 @@ export default function IndexPage() {
       <WeddingDate />
       <OurStory />
       <Gallery />
+      <Gifts />
 
       <Footer />
 

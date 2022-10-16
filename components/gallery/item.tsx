@@ -1,21 +1,21 @@
 import Image, { StaticImageData } from 'next/future/image'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { BsPlus } from 'react-icons/bs'
 
-import { useGallery } from './context'
+import Modal from './modal'
 
 type GalleryItemProps = {
   index: number
   src: StaticImageData
 }
 
-export default function GalleryItem({ src }: GalleryItemProps) {
-  const { setShow } = useGallery()
+export default function GalleryItem({ src, index }: GalleryItemProps) {
+  const [showModal, setShow] = useState(false)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
   return (
     <div className='w-full relative h-[250px]'>
       <button
-        className='w-full h-full group relative flex cursor-zoom-in'
+        className='w-full h-full group relative flex cursor-none pointer-events-none md:cursor-zoom-in md:pointer-events-auto'
         onClick={() => setShow(true)}
         ref={buttonRef}
       >
@@ -31,6 +31,8 @@ export default function GalleryItem({ src }: GalleryItemProps) {
           className='object-cover'
         />
       </button>
+
+      <Modal show={showModal} onClose={() => setShow(false)} index={index} />
     </div>
   )
 }

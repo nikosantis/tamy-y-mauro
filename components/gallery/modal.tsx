@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { StaticImageData } from 'next/future/image'
 import cx from 'clsx'
@@ -19,20 +19,20 @@ const items: Record<number, StaticImageData> = {
   6: img6
 }
 
-import { useGallery } from './context'
 import ModalItem from './modal-item'
 
 type ModalProps = {
   index: number
+  show: boolean
+  onClose: () => void
 }
 
-export default function Modal({ index }: ModalProps) {
-  const { showModal, setShow } = useGallery()
+export default function Modal({ index, show, onClose }: ModalProps) {
   const src = items[index]
 
   return (
-    <Transition appear show={showModal} as={Fragment} unmount>
-      <Dialog as='div' className='relative z-50' onClose={() => setShow(false)}>
+    <Transition.Root show={show} as={Fragment}>
+      <Dialog as='div' className='relative z-50' onClose={onClose}>
         <Transition.Child
           as={Fragment}
           enter='transition duration-100 ease-out'
@@ -67,6 +67,6 @@ export default function Modal({ index }: ModalProps) {
           </div>
         </div>
       </Dialog>
-    </Transition>
+    </Transition.Root>
   )
 }
