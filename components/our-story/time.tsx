@@ -30,7 +30,7 @@ export default function Time({
         direction === 'left' ? 'md:pr-12' : 'md:pl-12'
       )}
     >
-      <div className='h-[200px] w-full bg-lunar-700 relative'>
+      <div className='md:h-[200px] xl:h-[300px] w-full bg-lunar-700 relative'>
         <Image
           src={src}
           alt={title}
