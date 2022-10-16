@@ -21,7 +21,12 @@ export default function Time({
   className
 }: TimeProps) {
   const image = (
-    <div className={cx('w-4/12', direction === 'left' ? 'pr-24' : 'pl-24')}>
+    <div
+      className={cx(
+        'hidden md:block w-4/12',
+        direction === 'left' ? 'md:pr-24' : 'md:pl-24'
+      )}
+    >
       <div className='h-[300px] w-full bg-lunar-700' />
     </div>
   )

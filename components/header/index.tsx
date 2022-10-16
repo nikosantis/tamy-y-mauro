@@ -12,7 +12,7 @@ export default function Header() {
         'h-20 flex items-center'
       )}
     >
-      <div className='w-full px-10 h-full flex justify-between'>
+      <div className='w-full px-10 h-full flex justify-between items-center'>
         <div className='flex items-center'>
           <button>
             <Logo height={55} />
@@ -38,9 +38,14 @@ export default function Header() {
           <div className='h-full flex items-center px-1'>
             <Heart />
           </div>
-          <button className='h-full uppercase font-semibold text-sm text-westar-50 px-3'>
+          <a
+            href='https://milistadenovios.cl/enviar-regalo?id=5300'
+            target='_blank'
+            className='h-full uppercase font-semibold text-sm text-westar-50 px-3 inline-flex items-center'
+            rel='noreferrer'
+          >
             Regalos
-          </button>
+          </a>
           <div className='h-full flex items-center px-1'>
             <Heart />
           </div>

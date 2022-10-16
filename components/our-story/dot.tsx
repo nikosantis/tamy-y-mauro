@@ -6,7 +6,7 @@ type DotProps = {
 
 export default function Dot({ className }: DotProps) {
   return (
-    <div className={cx('flex justify-center', className)}>
+    <div className={cx(className, 'flex md:justify-center')}>
       <div className='rounded-full w-5 h-5 flex justify-center items-center bg-lunar-100 animate-pulse'>
         <div className='rounded-full w-3 h-3 bg-lunar-500' />
       </div>
