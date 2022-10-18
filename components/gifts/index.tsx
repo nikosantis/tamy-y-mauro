@@ -1,6 +1,9 @@
 import cx from 'clsx'
+import Image from 'next/future/image'
 
 import { useHeader } from 'components/header/context'
+
+import logoNovios from 'public/images/mi-lista-de-novios.png'
 
 export default function Gifts() {
   const { giftsRef } = useHeader()
@@ -11,15 +14,23 @@ export default function Gifts() {
     >
       <h2 className='font-brush text-5xl mb-12'>Regalos</h2>
 
-      <div className='block mx-auto max-w-7xl px-4 md:px-8'>
+      <div className='block mx-auto w-full max-w-4xl px-4 md:px-8'>
+        <p className='text-center text-sm font-light text-lunar-400 mb-4'>
+          Como ya sabes, nosotros armamos hace mucho tiempo nuestro hogar por lo
+          que si quieres hacernos un regalo, compartimos nuestra lista de deseos
+          para que se conviertan en el regalo más lindo que nos puedes dar.
+        </p>
+        <p className='text-center text-sm font-light text-lunar-400 mb-4'>
+          Solo debes ingresar al link, escoger el regalo que quieras hacernos y
+          listo.
+        </p>
         <p className='text-center text-sm font-light text-lunar-400 mb-8'>
-          Queremos compartir contigo nuestra lista de deseos para que se
-          conviertan en el regalo más lindo que nos puedes dar.
+          ¡Muchas gracias por cada detalle!
         </p>
 
-        <div className='flex justify-center'>
+        <div className='flex justify-center mb-8'>
           <a
-            href='https://milistadenovios.cl/enviar-regalo?id=5300'
+            href='https://milistadenovios.cl/lista/tamy-y-mauro-2023'
             target='_blank'
             className={cx(
               'inline-flex w-full md:w-auto justify-center',
@@ -31,6 +42,17 @@ export default function Gifts() {
           >
             Ver regalos
           </a>
+        </div>
+
+        <div className='flex justify-center'>
+          <Image
+            src={logoNovios}
+            alt='Tamy & Mauro'
+            placeholder='blur'
+            width={250}
+            height={37}
+            className='grayscale'
+          />
         </div>
       </div>
     </section>

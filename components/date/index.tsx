@@ -1,4 +1,7 @@
+import Image from 'next/future/image'
 import { FaWaze, FaMapMarkerAlt } from 'react-icons/fa'
+
+import img7 from 'public/images/flores.png'
 
 import dynamic from 'next/dynamic'
 const Countdown = dynamic(() => import('components/date/countdown'), {
@@ -7,7 +10,7 @@ const Countdown = dynamic(() => import('components/date/countdown'), {
 
 export default function WeddingDate() {
   return (
-    <section className='w-full bg-westar-300 py-28'>
+    <section className='w-full bg-westar-300 py-28 relative flex justify-center'>
       <div className='w-full flex flex-col items-center justify-center'>
         <h2 className='font-brush text-3xl md:text-5xl mb-6 text-center'>
           18 de febrero, 2023
@@ -44,6 +47,16 @@ export default function WeddingDate() {
           </address>
         </div>
         <Countdown />
+      </div>
+
+      <div className='absolute -bottom-24 z-10'>
+        <Image
+          src={img7}
+          alt='Tamy & Mauro'
+          placeholder='blur'
+          width={516}
+          height={183}
+        />
       </div>
     </section>
   )

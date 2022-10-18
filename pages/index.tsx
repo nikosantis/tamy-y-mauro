@@ -8,6 +8,8 @@ import Header from 'components/header'
 import Intro from 'components/intro'
 import OurStory from 'components/our-story'
 import Playlist from 'components/playlist'
+import Invite from 'components/invite'
+import Quote from 'components/quote'
 
 const meta = {
   title: 'Tamy & Mauro ♥ Matrimonio ♥ 18-02-2023',
@@ -32,10 +34,12 @@ export default function IndexPage() {
       <Header />
 
       <Intro />
+      <Invite />
       <WeddingDate />
       <OurStory />
       <Gallery />
       <Gifts />
+      <Quote />
 
       <Footer />
 

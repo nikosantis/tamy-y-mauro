@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const baseDate = new Date('02-18-2023')
+const baseDate = new Date(2023, 1, 18)
 const countDownDate = baseDate.getTime()
 
 export function useCountdown() {

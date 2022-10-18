@@ -1,6 +1,8 @@
 import { ReactNode, SyntheticEvent } from 'react'
 
 import { useForm, FormProvider } from 'lib/hooks/use-form'
+import { useContactForm } from './context'
+import { formSchema } from './schema'
 
 type FormValues = {
   'form-name': { value: string }
@@ -14,16 +16,20 @@ type FormWrapperProps = {
 }
 
 export default function FormWrapper({ children }: FormWrapperProps) {
+  const { setLoading, setError, setSuccess, isLoading } = useContactForm()
   const [{ formProps, handleSubmit }, providerProps] = useForm<FormValues>({
     inputValues: {
       'form-name': { value: '' },
       'form-email': { value: '' },
       'form-relation': { value: '' },
       'form-message': { value: '' }
+    },
+    options: {
+      schema: formSchema
     }
   })
 
-  const handleFormSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
     const targets = handleSubmit(e)
     const formData = {
@@ -32,7 +38,28 @@ export default function FormWrapper({ children }: FormWrapperProps) {
       relation: targets['form-relation'].value,
       message: targets['form-message'].value
     }
-    console.log(formData)
+    try {
+      setLoading(true)
+      setError(null)
+      setSuccess(false)
+      const res = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      const resJson = await res.json()
+      if (res.ok && resJson) {
+        setLoading(false)
+        setError(null)
+        setSuccess(true)
+      }
+    } catch (err) {
+      setLoading(false)
+      setSuccess(false)
+      setError('Error al intentar enviar el formulario')
+    }
   }
   return (
     <form
@@ -40,7 +67,9 @@ export default function FormWrapper({ children }: FormWrapperProps) {
       {...formProps}
       className='w-full flex flex-col'
     >
-      <FormProvider {...providerProps}>{children}</FormProvider>
+      <FormProvider {...providerProps} isLoading={isLoading}>
+        {children}
+      </FormProvider>
     </form>
   )
 }

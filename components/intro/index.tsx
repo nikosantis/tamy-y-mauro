@@ -3,8 +3,6 @@ import Image from 'next/future/image'
 import Logo from 'components/logo'
 
 import bannerImg from 'public/images/intro.webp'
-import left from 'public/images/utils/9-left.png'
-import right from 'public/images/utils/9-right.png'
 import img7 from 'public/images/utils/7.png'
 import { useHeader } from 'components/header/context'
 
@@ -26,24 +24,6 @@ export default function Intro() {
       <div className='absolute w-full h-full bg-coral-800/20' />
 
       <div className='w-full z-10 flex flex-col justify-center items-center'>
-        <div className='w-full flex justify-center'>
-          <div className='w-3/12 flex relative justify-between'>
-            <Image
-              src={right}
-              alt='Tamy & Mauro'
-              placeholder='blur'
-              width={150}
-              height={116}
-            />
-            <Image
-              src={left}
-              alt='Tamy & Mauro'
-              placeholder='blur'
-              width={150}
-              height={116}
-            />
-          </div>
-        </div>
         <div>
           <h1 className='font-play text-white text-center italic text-3xl mb-6'>
             ¡Nos Casamos!<span className='hidden'> - Tamy & Mauro</span>
