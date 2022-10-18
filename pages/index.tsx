@@ -30,6 +30,10 @@ export default function IndexPage() {
         <meta property='og:site_name' content='Tamy & Mauro' />
         <meta property='og:description' content={meta.description} />
         <meta property='og:title' content={meta.title} />
+        <meta
+          property='og:image'
+          content='https://tamy-y-mauro.vercel.app/images/gallery/2.jpg'
+        />
       </Head>
       <Header />
 
