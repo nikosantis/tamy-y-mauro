@@ -12,9 +12,12 @@ export default function WeddingDate() {
   return (
     <section className='w-full bg-westar-300 py-28 relative flex justify-center'>
       <div className='w-full flex flex-col items-center justify-center'>
-        <h2 className='font-brush text-3xl md:text-5xl mb-6 text-center'>
+        <h2 className='font-brush text-3xl md:text-5xl text-center mb-2'>
           18 de febrero, 2023
         </h2>
+        <p className='font-brush mb-6 text-3xl text-center md:text-4xl'>
+          16:30 hrs.
+        </p>
         <div className='text-center mb-8'>
           <address>
             <div className='mb-4'>

@@ -38,7 +38,7 @@ export default function Invite() {
             </h3>
             <p className='font-light text-sm text-lunar-400  mb-4'>
               Si estás leyendo esto, es por que te escogimos para que nos
-              acompañes en este día tan importante y disfrutes juntos a nosotros
+              acompañes en este día tan importante y disfrutes junto a nosotros
               de nuestro matrimonio. Queremos rodearnos de amor y que esta unión
               tan importante, tenga a todos nuestros seres queridos como
               testigos.

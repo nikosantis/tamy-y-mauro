@@ -10,16 +10,16 @@ export const story: StoryType[] = [
   {
     id: 1,
     title: 'Nos conocimos',
-    subtitle: 'Nuestra historia comienza hace 10 años atrás',
+    subtitle: 'Nuestra historia comienza hace 10 años atrás.',
     content:
-      'Aunque realmente comenzó muchos antes (pregúntenle a nuestros padres).'
+      'Aunque realmente comenzó mucho antes (pregúntenle a nuestros padres).'
   },
   {
     id: 2,
     title: 'Nos enamoramos',
-    subtitle: 'Vivimos juntos hace 7 años',
+    subtitle: 'Vivimos juntos hace 7 años.',
     content:
-      'Dicen que para casarse hay que conocerse bien... ¡Creemos que es tiempo suficiente!. (jaja)'
+      'Dicen que para casarse hay que conocerse bien... ¡Creemos que es tiempo suficiente!. (jaja).'
   },
   {
     id: 3,
