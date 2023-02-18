@@ -2,15 +2,15 @@ import Image from 'next/future/image'
 import { FaWaze, FaMapMarkerAlt } from 'react-icons/fa'
 
 import img7 from 'public/images/flores.png'
-
-import dynamic from 'next/dynamic'
-const Countdown = dynamic(() => import('components/date/countdown'), {
-  ssr: false
-})
+import { useHeader } from 'components/header/context'
 
 export default function WeddingDate() {
+  const { whereRef } = useHeader()
   return (
-    <section className='w-full bg-westar-300 py-28 relative flex justify-center'>
+    <section
+      className='w-full bg-westar-300 py-28 relative flex justify-center'
+      ref={whereRef}
+    >
       <div className='w-full flex flex-col items-center justify-center'>
         <h2 className='font-brush text-3xl md:text-5xl text-center mb-2'>
           18 de febrero, 2023
