@@ -49,7 +49,9 @@ export default function WeddingDate() {
             </div>
           </address>
         </div>
-        <Countdown />
+        <div className='bg-westar-100 p-4 rounded-md'>
+          <h5 className='font-normal text-xl'>Llegó el día. ¡Te esperamos!</h5>
+        </div>
       </div>
 
       <div className='absolute -bottom-24 z-10'>
